@@ -1,16 +1,61 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+##Создайте базовый класс `Animal`, который будет содержать общие атрибуты (например, `name`, `age`)
+# и методы (`make_sound()`, `eat()`) для всех животных.
+# 2. Реализуйте наследование, создав подклассы `Bird`, `Mammal`, и `Reptile`, которые наследуют от класса `Animal`.
+# Добавьте специфические атрибуты и переопределите методы, если требуется (например, различный звук для `make_sound()`).
+# 3. Продемонстрируйте полиморфизм: создайте функцию `animal_sound(animals)`,
+# которая принимает список животных и вызывает метод `make_sound()` для каждого животного.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+class Animal():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def make_sound(self):
+        pass
+
+    def eat(self):
+        pass
+
+
+class Bird(Animal):
+
+    def make_sound(self):
+        print("Птицы щебечут")
+
+    def eat(self):
+        print("Птицы клюют зерно")
+
+
+class Mammal(Animal):
+
+    def make_sound(self):
+        print("Звери рычат")
+
+    def eat(self):
+        print("Звери едят мясо")
+
+
+
+class Reptile(Animal):
+
+    def make_sound(self):
+        print("Рептилии шипят")
+
+    def eat(self):
+        print("Рептилии едят траву")
+
+
+
+
+animals = [Bird("Соловей", 2), Mammal("Тигр", 3), Reptile("Нагайна", 8)]
+
+for animal in animals:
+           animal.make_sound()
+
+for animal in animals:
+           animal.eat()
+
+
+
